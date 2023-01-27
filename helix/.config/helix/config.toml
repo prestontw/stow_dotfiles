@@ -1,0 +1,9 @@
+# theme = "monokai_pro_ristretto"
+theme = "varua"
+
+[editor]
+line-number = "relative"
+
+[keys.insert]
+j = { k = "normal_mode" } # Maps `jk` to exit insert mode
+
