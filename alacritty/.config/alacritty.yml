@@ -36,3 +36,7 @@ font:
 
   # Point size
   size: 14.0
+
+key_bindings:
+  # MacOS only
+  - { key: N,              mods: Command,                    action: CreateNewWindow       }
