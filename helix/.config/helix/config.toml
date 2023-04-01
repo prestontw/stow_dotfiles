@@ -4,6 +4,7 @@ theme = "varua"
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+soft-wrap.enable = true
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
