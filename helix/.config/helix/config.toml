@@ -12,3 +12,6 @@ j = { k = "normal_mode" } # Maps `jk` to exit insert mode
 [keys.normal]
 ";" = "command_mode"
 esc = ["collapse_selection", "keep_primary_selection"]
+"j" = "move_line_down"
+"k" = "move_line_up"
+g = { k = "move_visual_line_up", j = "move_visual_line_down" } # Maps `jk` line movement like vim so relative line numbers work
