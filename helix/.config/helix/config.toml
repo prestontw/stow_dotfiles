@@ -6,6 +6,7 @@ theme = "varua"
 line-number = "relative"
 bufferline = "multiple"
 soft-wrap.enable = true
+lsp.display-inlay-hints = true
 
 [keys.insert]
 j = { k = "normal_mode" } # Maps `jk` to exit insert mode
