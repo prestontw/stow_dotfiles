@@ -40,3 +40,5 @@ font:
 key_bindings:
   # MacOS only
   - { key: N,              mods: Command,                    action: CreateNewWindow       }
+window:
+  option_as_alt: Both
