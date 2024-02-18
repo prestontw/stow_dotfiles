@@ -1,0 +1,25 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:tab-bar"
+    }
+    pane split_direction="horizontal" {
+        pane command="hx" size="60%" borderless=true {
+            args "./"
+        }
+        pane split_direction="vertical" {
+            pane stacked=true {
+                pane
+                pane
+            }
+            pane
+        }
+    }
+    pane size=2 borderless=true {
+        plugin location="zellij:status-bar"
+    }
+}
+keybinds {
+    shared {
+        bind "Alt 6" { Run "git" "diff"; }
+    }
+}
