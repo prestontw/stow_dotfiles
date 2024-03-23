@@ -3,9 +3,10 @@ keybinds {
     normal {
         // uncomment this and adjust key if using copy_on_select=false
         // bind "Alt c" { Copy; }
-        unbind "Ctrl s"
+        // Unbound this to save things to jump list, but session manager seems better
+        // unbind "Ctrl s"
         unbind "Ctrl o"
-        bind "Ctrl f" { SwitchToMode "Search"; }
+        bind "Ctrl s" { SwitchToMode "Session"; }
     }
 }
 
