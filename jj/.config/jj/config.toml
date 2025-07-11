@@ -11,3 +11,8 @@ tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pus
 [revset-aliases]
 'closest_bookmark(to)' = 'heads(ancestors(to) & bookmarks())'
 'closest_pushable(to)' = 'heads(ancestors(to) & mutable() & ~description(exact:"") & (~empty() | merges()))'
+
+[template-aliases]
+'format_short_signature(signature)' = '''
+coalesce(signature.email().local(), email_placeholder)'''
+"format_timestamp(timestamp)" = "timestamp.ago()" # from https://github.com/mitchellh/nixos-config/blob/a5b54e2efcddaab840afc9063e40ebdb83d385fa/users/mitchellh/jujutsu.toml#L25
