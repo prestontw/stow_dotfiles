@@ -1,3 +1,4 @@
 {
-  "sandbox": "docker"
+  "sandbox": "docker",
+  "selectedAuthType": "oauth-personal"
 }
