@@ -89,7 +89,7 @@ keybinds clear-defaults=true {
     scroll {
         bind "e" { EditScrollback; SwitchToMode "normal"; }
         bind "s" { SwitchToMode "entersearch"; SearchInput 0; }
-        bind "Alt s" { SwitchToMode "normal"; }
+        bind "Ctrl s" { SwitchToMode "normal"; }
     }
     search {
         bind "c" { SearchToggleOption "CaseSensitivity"; }
@@ -155,7 +155,7 @@ keybinds clear-defaults=true {
         bind "Ctrl b" { SwitchToMode "tmux"; }
     }
     shared_except "locked" "scroll" "entersearch" "renametab" "renamepane" "prompt" "tmux" {
-        bind "Alt s" { SwitchToMode "scroll"; }
+        bind "Ctrl s" { SwitchToMode "scroll"; }
     }
     shared_except "locked" "tab" "entersearch" "renametab" "renamepane" "prompt" "tmux" {
         bind "Alt t" { SwitchToMode "tab"; }
@@ -177,10 +177,10 @@ keybinds clear-defaults=true {
         bind "Alt [" { PreviousSwapLayout; }
         bind "Alt ]" { NextSwapLayout; }
         bind "Alt f" { ToggleFloatingPanes; }
-        bind "Alt i" { MoveTab "left"; }
-        bind "Alt j" { MoveFocus "down"; }
-        bind "Alt k" { MoveFocus "up"; }
-        bind "Alt l" { MoveFocusOrTab "right"; }
+        bind "Ctrl i" { MoveTab "left"; }
+        bind "Ctrl j" { MoveFocus "down"; }
+        bind "Ctrl k" { MoveFocus "up"; }
+        bind "Ctrl l" { MoveFocusOrTab "right"; }
     }
     shared_except "normal" "locked" "entersearch" {
         bind "enter" { SwitchToMode "normal"; }
