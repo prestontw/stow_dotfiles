@@ -11,3 +11,4 @@ mods = "Command"
 
 [window]
 option_as_alt = "Both"
+decorations = "None"
