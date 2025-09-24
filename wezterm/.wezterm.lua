@@ -5,7 +5,7 @@ local wezterm = require 'wezterm'
 local config = wezterm.config_builder()
 
 -- This is where you actually apply your config choices.
- 
+
 -- config.font = wezterm.font 'JetBrainsMono Nerd Font Mono' -- No need to set since this is already the default.
 config.font_size = 16
 config.color_scheme = 'IC_Orange_PPL'
