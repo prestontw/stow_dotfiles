@@ -30,6 +30,8 @@ brew "just"
 brew "libpq", link: true
 # Next-gen compiler infrastructure
 brew "llvm"
+# Polyglot runtime manager (asdf rust clone)
+brew "mise"
 # Open source relational database management system
 brew "mysql"
 # Development kit for the Java programming language
