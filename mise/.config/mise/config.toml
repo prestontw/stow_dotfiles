@@ -1,0 +1,11 @@
+[tools]
+"npm:@astrojs/language-server" = "latest"
+"npm:@markdoc/language-server" = "latest"
+"npm:@tailwindcss/language-server" = "latest"
+"npm:typescript-language-server" = "latest"
+
+[settings]
+experimental = true
+lockfile = true
+
+npm.package_manager = "pnpm"
