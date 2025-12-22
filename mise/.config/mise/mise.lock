@@ -2,10 +2,6 @@
 version = "2.16.2"
 backend = "npm:@astrojs/language-server"
 
-[[tools."npm:@markdoc/language-server"]]
-version = "0.0.13"
-backend = "npm:@markdoc/language-server"
-
 [[tools."npm:@tailwindcss/language-server"]]
 version = "0.14.29"
 backend = "npm:@tailwindcss/language-server"
