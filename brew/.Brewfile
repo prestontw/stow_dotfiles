@@ -38,6 +38,10 @@ brew "mysql"
 brew "openjdk@11"
 # Cryptography and SSL/TLS Toolkit
 brew "openssl@1.1"
+# Tool for managing OCI containers and pods
+brew "podman"
+# Alternative to docker-compose using podman
+brew "podman-compose"
 # Object-relational database system
 brew "postgresql@14", link: false
 # Object-relational database system
