@@ -3,6 +3,7 @@ cargo-binstall = "latest"
 "npm:@astrojs/language-server" = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 "npm:typescript-language-server" = "latest"
+"npm:svelte-language-server" = "latest"
 
 [settings]
 experimental = true
