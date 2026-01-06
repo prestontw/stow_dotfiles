@@ -1,5 +1,5 @@
-tap "michaeleisel/zld"
-tap "nikitabobko/tap"
+tap "michaeleisel/zld" if OS.mac?
+tap "nikitabobko/tap" if OS.mac?
 # ANSI HTML adapter
 brew "aha"
 # Improved shell history for zsh, bash, fish and nushell
@@ -14,9 +14,9 @@ brew "jj"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
-# Postgres C API library
+# Postgres C API library; unsure if should install here or at project level
 brew "libpq", link: true
-# Next-gen compiler infrastructure
+# Next-gen compiler infrastructure; unsure if needed
 brew "llvm"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
