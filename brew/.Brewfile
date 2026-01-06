@@ -4,12 +4,8 @@ tap "nikitabobko/tap"
 brew "aha"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
-# Google's own build tool
-brew "bazel"
 # Vector graphics library with cross-device output support
 brew "cairo"
-# Secure runtime for JavaScript and TypeScript
-brew "deno"
 # XML-based font configuration API for X Windows
 brew "fontconfig"
 # Interact with Google Gemini AI models from the command-line
