@@ -4,6 +4,5 @@ export EDITOR="hx"
 export PATH="$PATH:$HOME/.orbstack/bin"
 
 eval "$(starship init zsh)"
-eval "$(direnv hook zsh)"
 eval "$(atuin init zsh)"
 eval "$(mise activate zsh)"
