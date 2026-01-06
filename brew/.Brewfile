@@ -14,8 +14,6 @@ brew "jj"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
-# Postgres C API library; unsure if should install here or at project level
-brew "libpq", link: true
 # Next-gen compiler infrastructure; unsure if needed
 brew "llvm"
 # Polyglot runtime manager (asdf rust clone)
