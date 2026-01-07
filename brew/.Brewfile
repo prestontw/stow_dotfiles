@@ -14,8 +14,6 @@ brew "jj"
 brew "jq"
 # Handy way to save and run project-specific commands
 brew "just"
-# Next-gen compiler infrastructure; unsure if needed
-brew "llvm"
 # Polyglot runtime manager (asdf rust clone)
 brew "mise"
 # Tool for managing OCI containers and pods; orbstack on mac
