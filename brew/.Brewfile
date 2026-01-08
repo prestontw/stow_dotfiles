@@ -36,3 +36,16 @@ brew "zellij"
 cask "aerospace" if OS.mac?
 # GPU-accelerated cross-platform terminal emulator and multiplexer
 cask "wezterm" if OS.mac?
+flatpak "com.brave.Browser"
+flatpak "com.github.Matoking.protontricks"
+flatpak "com.github.tchx84.Flatseal"
+flatpak "com.ranfdev.DistroShelf"
+flatpak "com.vysp3r.ProtonPlus"
+flatpak "io.github.flattool.Warehouse"
+flatpak "org.kde.filelight"
+flatpak "org.kde.gwenview"
+flatpak "org.kde.haruna"
+flatpak "org.kde.kcalc"
+flatpak "org.kde.okular"
+flatpak "org.mozilla.firefox"
+flatpak "org.wezfurlong.wezterm"
