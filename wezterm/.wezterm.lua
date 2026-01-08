@@ -33,5 +33,7 @@ config.colors = {
   visual_bell = '#202020',
 }
 
+config.default_prog = { '/usr/bin/fish', '-l' }
+
 -- Finally, return the configuration to wezterm:
 return config
