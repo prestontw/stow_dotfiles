@@ -4,6 +4,7 @@ cargo-binstall = "latest"
 "npm:@tailwindcss/language-server" = "latest"
 "npm:typescript-language-server" = "latest"
 "npm:svelte-language-server" = "latest"
+node = "latest"
 
 [settings]
 experimental = true

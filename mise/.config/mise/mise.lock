@@ -3,6 +3,10 @@ version = "1.16.5"
 backend = "aqua:cargo-bins/cargo-binstall"
 "platforms.macos-arm64" = { checksum = "sha256:c0ef1a0ed64689f56191a7892fa4c30795a2923d524c4b66e5ba174c44db6a83", url = "https://github.com/cargo-bins/cargo-binstall/releases/download/v1.16.5/cargo-binstall-aarch64-apple-darwin.zip"}
 
+[[tools.node]]
+version = "22.20.0"
+backend = "core:node"
+
 [[tools."npm:@astrojs/language-server"]]
 version = "2.16.2"
 backend = "npm:@astrojs/language-server"
