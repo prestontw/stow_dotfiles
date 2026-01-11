@@ -4,8 +4,6 @@ tap "nikitabobko/tap" if OS.mac?
 brew "aha"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
-# Interact with Google Gemini AI models from the command-line
-brew "gemini-cli" if OS.mac?
 # Post-modern modal text editor
 brew "helix"
 # Git-compatible distributed version control system

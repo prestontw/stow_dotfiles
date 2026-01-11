@@ -6,6 +6,8 @@ cargo-binstall = "latest"
 "npm:svelte-language-server" = "latest"
 node = "latest"
 
+# gemini-cli
+
 [settings]
 experimental = true
 lockfile = true
