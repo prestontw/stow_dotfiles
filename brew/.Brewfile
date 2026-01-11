@@ -4,6 +4,8 @@ tap "nikitabobko/tap" if OS.mac?
 brew "aha"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Modern, maintained replacement for ls
+brew "eza"
 # Post-modern modal text editor
 brew "helix"
 # Git-compatible distributed version control system
