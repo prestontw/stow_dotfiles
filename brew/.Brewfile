@@ -4,6 +4,8 @@ tap "nikitabobko/tap" if OS.mac?
 brew "aha"
 # Improved shell history for zsh, bash, fish and nushell
 brew "atuin"
+# Diff that understands syntax
+brew "difftastic"
 # Post-modern modal text editor
 brew "helix"
 # Git-compatible distributed version control system
