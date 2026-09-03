@@ -1,30 +1,15 @@
+# New VM: edit this file before `just create`.
+# Existing VM: run `just edit` and repeat the change in Lima's saved config.
 images:
-  - location: "https://github.com/nixos-lima/nixos-lima/releases/download/v0.0.5/nixos-lima-v0.0.5-aarch64.qcow2"
+  - location: "https://github.com/nixos-lima/nixos-lima/releases/download/v0.2.1/nixos-lima-v0.2.1-aarch64.qcow2"
     arch: "aarch64"
-    digest: "sha512:e1daeb0dcec65c624253603ab5ec06f0831b0940cd95a88903f9bfd0ee4009b2c45806b868674c7e8cb12941e50799e85d710fc0e9ad659059108cebbc4d19c1"
-  - location: "https://github.com/nixos-lima/nixos-lima/releases/download/v0.0.5/nixos-lima-v0.0.5-x86_64.qcow2"
-    arch: "x86_64"
-    digest: "sha512:51fbe74c569736f1141f1c6efeaa21a0901dff0bec5bc1e863c04c7765e150c3bebd82b7f50905fb7a0a9a9b050852c250ffbdcacd17b0dc15aeb86d47587436"
+    digest: "sha512:748c723b69dbdec40a9acaf78cc9070ae784dcb64b0856ab906efdac822d9abcc65565b8f8dfa4cf8b49cc6c12c372072e83bb5ed9247330a7c22675d9e141ce"
 
-mounts:
-- location: "~/git"
-  mountPoint: "{{.Home}}/git"
-  writable: true
-  9p:
-    # Try choosing "mmap" or "none" if you see a stability issue with the default "fscache".
-    cache: "mmap"
-- location: "~/.config"
-  mountPoint: "{{.Home}}/.config"
-  writable: false
-  9p:
-    # Try choosing "mmap" or "none" if you see a stability issue with the default "fscache".
-    cache: "mmap"
-- location: "/tmp/lima"
-  writable: true
-  9p:
-    cache: "mmap"
+# Only listed host directories are shared. Replace or remove this example.
+mounts: []
 
-memory: 8GiB
+cpus: 5
+memory: 16GiB
 
 portForwards:
   # Tell Lima's port-forwarding to ignore port 68 to prevent interception of host DHCP packets
