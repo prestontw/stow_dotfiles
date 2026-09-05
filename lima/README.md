@@ -25,13 +25,9 @@ mounts:
   - location: "~/git/datastar-f-sharp-experiment"
     mountPoint: "/home/{{.User}}.guest/git/datastar-f-sharp-experiment"
     writable: true
-    9p:
-      cache: "mmap"
   - location: "~/.dotfiles"
     mountPoint: "/home/{{.User}}.guest/.dotfiles"
     writable: false
-    9p:
-      cache: "mmap"
 ```
 
 ### VM creation
