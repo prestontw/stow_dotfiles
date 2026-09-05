@@ -10,6 +10,9 @@ mountType: "virtiofs"
 # Only listed host directories are shared. Replace or remove this example.
 mounts: []
 
+ssh:
+  localPort: 60022
+
 cpus: 5
 memory: 16GiB
 
