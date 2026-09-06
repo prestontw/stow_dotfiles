@@ -56,6 +56,8 @@
   boot = {
     kernelPackages = pkgs.linuxPackages_latest;
     loader.grub = {
+      # limit entries so repeated `just apply`'s don't fill up boot
+      configurationLimit = 1;
       device = "nodev";
       efiSupport = true;
       efiInstallAsRemovable = true;
