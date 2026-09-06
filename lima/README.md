@@ -39,6 +39,17 @@ just create
 just shell
 ```
 
+### Convenient VM and Ghostty integration
+
+As much as I like zellij and tmux, I like [Aerospace](https://github.com/nikitabobko/AeroSpace) more.
+I want to open new tabs and windows as actual tabs and windows rather than virtual panes and windows within a multiplexer.
+However, the default Ghostty new tab and new window behaviors open on my host machine rather than within the VM.
+
+`just ty` opens up a new Ghostty window configured such that new tabs and windows all start within the VM and within a specified directory if given.
+One difference from a native experience: if I move to a sub-directory and hit Command+n, the new window will open in the sub-directory.
+In this setup, the new window will open up in the original specified path, not the sub-directory.
+(This is good enough to me, and is similar to what the Codex desktop app does when connected to a remote computer.)
+
 ### Coding agents and updates
 
 This setup uses a pinned stable nix version.
