@@ -1,9 +1,7 @@
 # After editing this file, run `just apply` on the host.
-{ pkgs, unstablePkgs }:
+{ pkgs }:
 with pkgs; [
   atuin
-  unstablePkgs.claude-code
-  unstablePkgs.codex
   difftastic
   ghostty.terminfo
   git
@@ -12,7 +10,7 @@ with pkgs; [
   mise
   nil
   nixpkgs-fmt
-  unstablePkgs.pi-coding-agent
+  nodejs_24
   stow
   watchexec
   zellij
