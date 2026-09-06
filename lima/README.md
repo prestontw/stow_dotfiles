@@ -39,6 +39,15 @@ just create
 just shell
 ```
 
+### Coding agents and updates
+
+This setup uses a pinned stable nix version.
+I tried using unstable to get the latest and greatest coding agents, but it was still behind the most recent releases, resulting regrettably in GPT-6 being available locally on my host machine but not when remoting into this dev box.
+
+To try to get the latest and greatest agent harnesses earlier than nixpkgs, I download and manage them through `mise` (which I also like to use to manage language servers (or other tooling that Nix doesn't exactly have right for me, like when I tried to use [typeshare](https://github.com/1Password/typeshare) in a project and only Go was supported in nix's version)).
+To update tools managed by `mise`, use `just update-mise-tools`.
+This is done as a part of `just create` and `just apply`, so it is only needed if you want new versions right now.
+
 ### Differences from the sample config
 
 - Rather than using home-manager, I rely on `stow` for a majority of my dotfile management, which is what I use in other environments.

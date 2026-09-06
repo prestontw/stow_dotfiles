@@ -3,6 +3,7 @@ set dotenv-load := false
 instance := env_var_or_default("LIMA_INSTANCE", "nix-dev")
 guest_staging := "/tmp/nixos-lima-config"
 config_files := "flake.nix flake.lock nixos-lima-config.nix packages.nix"
+agent_tools := "npm:@openai/codex npm:@earendil-works/pi-coding-agent aqua:anthropics/claude-code"
 
 # Show the available VM workflows.
 default:
@@ -57,7 +58,16 @@ apply instance_name=instance:
     limactl edit "$instance_name" \
       --set '.user.shell = "/run/current-system/sw/bin/fish"'
     limactl start "$instance_name"
+    just install-mise-tools "$instance_name"
     echo "NixOS is ready. Enter it with: just shell $instance_name"
+
+# Install coding agents into the VM user's global mise config.
+install-mise-tools instance_name=instance:
+    limactl shell "{{ instance_name }}" -- sh -lc 'cd "$HOME" && mise use --global --fuzzy {{ agent_tools }} && mise reshim'
+
+# Upgrade coding agents directly from upstream.
+update-mise-tools instance_name=instance:
+    limactl shell "{{ instance_name }}" -- sh -lc 'cd "$HOME" && mise upgrade {{ agent_tools }} && mise reshim'
 
 # Open an interactive shell in the VM.
 shell instance_name=instance:
