@@ -41,6 +41,7 @@
   # Upstream binaries installed by mise use the conventional Linux loader.
   programs.nix-ld.enable = true;
   programs.starship.enable = true;
+  programs.direnv.enable = true;
 
   # Shims also make the agents available to non-interactive SSH commands.
   environment.extraInit = ''
