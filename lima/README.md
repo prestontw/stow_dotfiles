@@ -59,11 +59,19 @@ To try to get the latest and greatest agent harnesses earlier than nixpkgs, I do
 To update tools managed by `mise`, use `just update-mise-tools`.
 This is done as a part of `just create` and `just apply`, so it is only needed if you want new versions right now.
 
+### Adding and configuring packages
+
+I've tried to arrange this so you really only need to edit `packages.nix`.
+There's a simple list to add programs that don't need major integrations (`helix` or `jj`, for example), but there's also space to configure programs that need to integrate with other programs.
+For example, my configuration customizes the default shell experience with `fish`, `atuin`, `starship`, etc.
+This require some integration points, so we usually `.enable` them instead of adding them to the flat list.
+
+Search the [package list](https://search.nixos.org/packages) and the [options list](https://search.nixos.org/options) for package names and options to configure them if they require more integrations to function properly.
+
 ### Differences from the sample config
 
 - Rather than using home-manager, I rely on `stow` for a majority of my dotfile management, which is what I use in other environments.
 - `just` rather than setup shell scripts for provisioning and updates
 - Focuses on my user, name, and architecture rather than being more general purpose.
 - Only share specific directories (none by default) rather than giving access to all of my computer.
-- Packages are mostly listed in `packages.nix` rather than being spread across `nixos-lima-config.nix` and home manager.
-  Some are still in `nixos-lima-config.nix` because they have a larger system impact, like `direnv`, `fish`, or `starship`.
+- Packages and their shell integration are together in `packages.nix`.

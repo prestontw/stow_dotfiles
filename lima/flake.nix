@@ -22,6 +22,7 @@
         modules = [
           nixos-lima.nixosModules.lima
           ./nixos-lima-config.nix
+          ./packages.nix
         ];
       };
     };

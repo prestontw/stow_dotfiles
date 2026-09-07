@@ -34,30 +34,6 @@
 
   security.sudo.wheelNeedsPassword = false;
 
-  programs.fish.enable = true;
-  programs.fish.interactiveShellInit = ''
-    mise activate fish | source
-  '';
-  # Upstream binaries installed by mise use the conventional Linux loader.
-  programs.nix-ld.enable = true;
-  programs.starship.enable = true;
-  programs.direnv.enable = true;
-
-  # Shims also make the agents available to non-interactive SSH commands.
-  environment.extraInit = ''
-    export PATH="''${XDG_DATA_HOME:-$HOME/.local/share}/mise/shims:$PATH"
-  '';
-
-  # limactl shell forwards TERM with its pseudo-terminal, but not COLORTERM.
-  # Declare the VM's true-color support so Helix uses its full default theme.
-  environment.sessionVariables = {
-    COLORTERM = "truecolor";
-    EDITOR = "hx";
-    VISUAL = "hx";
-    # Let mise own Claude Code updates, including the selected version.
-    DISABLE_AUTOUPDATER = "1";
-  };
-
   # The Lima user already exists before this configuration is installed. Read
   # its name from Lima's metadata so this configuration works for any host user.
   systemd.services.lima-init.postStart = ''
@@ -92,8 +68,5 @@
     ];
   };
 
-  environment.systemPackages = import ./packages.nix { inherit pkgs; };
-
   system.stateVersion = "26.05";
 }
-
