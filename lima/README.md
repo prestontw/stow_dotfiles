@@ -56,8 +56,9 @@ This setup uses a pinned stable nix version.
 I tried using unstable nixpkgs to get the latest and greatest coding agents, but it was still behind the most recent releases, regrettably resulting in GPT-6 being available locally on my host machine but not when remoting into this dev box.
 
 To try to get the latest and greatest agent harnesses earlier than nixpkgs, I download and manage them through `mise` (which I also like to use to manage language servers (or other tooling that Nix doesn't exactly have right for me, like when I tried to use [typeshare](https://github.com/1Password/typeshare) in a project and only Go was supported in nix's version)).
-To update tools managed by `mise`, use `just update-mise-tools`.
-This is done as a part of `just create` and `just apply`, so it is only needed if you want new versions right now.
+
+To update tools managed by `mise`, edit either the files on the host and run `just update-mise-tools` or run `mise upgrade` from within the VM.
+Note that you will need to edit the appropriate config file if there are version constraints for your tools: `guest-mise.toml` if running from the host; or the VM user's global mise config (normally `~/.config/mise/config.toml`) if already shell'ed into the VM.
 
 ### Adding and configuring packages
 

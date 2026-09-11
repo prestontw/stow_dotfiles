@@ -1,0 +1,5 @@
+# VM user's global mise tools. Run `just update-mise-tools` from the host or `mise upgrade` from the VM.
+[tools]
+"npm:@openai/codex" = "latest"
+"npm:@earendil-works/pi-coding-agent" = "latest"
+"aqua:anthropics/claude-code" = "latest"
