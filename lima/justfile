@@ -83,7 +83,8 @@ shell instance_name=instance project_dir="":
     open -na Ghostty --args \
       --env="PATH=$PATH" \
       --command={{ quote("just --justfile " + quote(justfile()) + " shell " + quote(instance_name) + " " + quote(project_dir)) }} \
-      --window-save-state=never
+      --window-save-state=never \
+      --quit-after-last-window-closed=true
 
 # Edit an existing instance's Lima settings, then restart it.
 edit instance_name=instance:
