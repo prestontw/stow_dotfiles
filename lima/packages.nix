@@ -9,6 +9,7 @@
     git
     helix
     jujutsu
+    just
     mise
     nil
     nixpkgs-fmt
