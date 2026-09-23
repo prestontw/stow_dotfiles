@@ -14,6 +14,7 @@
     nil
     nixpkgs-fmt
     nodejs_24
+    ripgrep
     stow
     watchexec
     zellij
