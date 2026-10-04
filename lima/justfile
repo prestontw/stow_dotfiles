@@ -53,11 +53,21 @@ apply instance_name=instance:
     cleanup
     trap - EXIT
 
-    limactl stop "$instance_name"
-    limactl edit "$instance_name" \
-      --set '.user.shell = "/run/current-system/sw/bin/fish"'
-    limactl start "$instance_name"
+    restart_vm() {
+      limactl stop "$instance_name"
+      limactl edit "$instance_name" \
+        --set '.user.shell = "/run/current-system/sw/bin/fish"'
+      limactl start "$instance_name"
+    }
+
+    # The base image needs an initial boot into our configuration to get mise.
+    if ! limactl shell "$instance_name" -- sh -lc 'command -v mise >/dev/null'; then
+      restart_vm
+    fi
+
+    # Restart after upgrades so agents reconnect to the current installation.
     just update-mise-tools "$instance_name"
+    restart_vm
     echo "NixOS is ready. Enter it with: just shell $instance_name"
 
 # Install/upgrade mise tools according to version constraints.

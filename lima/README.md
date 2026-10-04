@@ -60,6 +60,16 @@ To try to get the latest and greatest agent harnesses earlier than nixpkgs, I do
 To update tools managed by `mise`, edit either the files on the host and run `just update-mise-tools` or run `mise upgrade` from within the VM.
 Note that you will need to edit the appropriate config file if there are version constraints for your tools: `guest-mise.toml` if running from the host; or the VM user's global mise config (normally `~/.config/mise/config.toml`) if already shell'ed into the VM.
 
+### Recovering Codex after VM maintenance
+
+After a restart or tool upgrade, a remote Codex agent may report:
+
+> the command runner failed twice because its `codex-code-mode-host` executable is missing
+
+This is likely due to the host Codex client trying to connect to the VM Codex server that was just deleted.
+
+This shouldn't happen anymore, but if it does, restart the SSH connection to fix.
+
 ### Adding and configuring packages
 
 I've tried to arrange this so you really only need to edit `packages.nix`.
