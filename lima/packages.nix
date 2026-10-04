@@ -23,6 +23,11 @@
   # Upstream binaries installed by mise use the conventional Linux loader.
   programs.nix-ld.enable = true;
 
+  # Run Nix-built images as the Lima user, without an API service.
+  virtualisation.podman.enable = true;
+  systemd.sockets.podman.enable = false;
+  systemd.user.sockets.podman.enable = false;
+
   programs.fish.enable = true;
   programs.fish.interactiveShellInit = ''
     mise activate fish | source
