@@ -3,3 +3,4 @@
 "npm:@openai/codex" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "aqua:anthropics/claude-code" = "latest"
+"aqua:jj-vcs/jj" = "latest"

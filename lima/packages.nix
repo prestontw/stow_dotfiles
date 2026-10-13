@@ -8,7 +8,6 @@
     ghostty.terminfo
     git
     helix
-    jujutsu
     just
     mise
     nil
@@ -33,6 +32,10 @@
     mise activate fish | source
     # Keep Atuin reading the user config managed by Stow.
     atuin init fish | source
+    # mise installs jj without the shell completions nixpkgs used to provide.
+    if command -q jj
+      COMPLETE=fish jj | source
+    end
   '';
   programs.starship.enable = true;
   programs.direnv.enable = true;
