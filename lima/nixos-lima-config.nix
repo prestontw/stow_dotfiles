@@ -39,10 +39,13 @@ in
   # Enable lima-init, lima-guestagent, other config needed for Lima support (via `nixos-lima.nixosModules.lima`)
   services.lima.enable = true;
 
-  nix.settings.experimental-features = [
-    "nix-command"
-    "flakes"
-  ];
+  nix.settings = {
+    experimental-features = [
+      "nix-command"
+      "flakes"
+    ];
+    warn-dirty = false;
+  };
 
   # ssh
   services.openssh = {
