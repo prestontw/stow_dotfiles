@@ -66,6 +66,13 @@ in
 
   security.sudo.wheelNeedsPassword = false;
 
+  # Remove these certificates based on https://emudhra.we-have-a-problem.com/.
+  # We can remove this when nixos updates new CA certs.
+  security.pki.caCertificateBlacklist = [
+    "Comodo AAA Services root"
+    "emSign ECC Root CA - G3"
+  ];
+
   # The Lima user already exists before this configuration is installed. Read
   # its name from Lima's metadata so this configuration works for any host user.
   systemd.services.lima-init.postStart = ''
