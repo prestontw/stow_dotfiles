@@ -36,8 +36,11 @@
     if command -q jj
       COMPLETE=fish jj | source
     end
+    
+    if test "$TERM" != dumb; and command -q starship
+      starship init fish | source
+    end
   '';
-  programs.starship.enable = true;
   programs.direnv.enable = true;
 
   # Shims also make the agents available to non-interactive SSH commands.

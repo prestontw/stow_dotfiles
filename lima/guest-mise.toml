@@ -4,3 +4,4 @@
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "aqua:anthropics/claude-code" = "latest"
 "aqua:jj-vcs/jj" = "latest"
+"aqua:starship/starship" = "latest"
