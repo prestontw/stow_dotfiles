@@ -7,8 +7,16 @@ images:
 
 mountType: "virtiofs"
 
-# Only listed host directories are shared. Replace or remove this example.
-mounts: []
+# Share exported git repos, but read-only. To pull changes back to the host,
+# add the vm as a remote over ssh and fetch changes from it.
+mounts:
+- location: "~/git/export"
+  mountPoint: "/home/{{.User}}.guest/git/export"
+  writable: false
+# only bring starship config in for now
+- location: "~/.dotfiles/starship"
+  mountPoint: "/home/{{.User}}.guest/.dotfiles/starship"
+  writable: false
 
 ssh:
   localPort: 60022
