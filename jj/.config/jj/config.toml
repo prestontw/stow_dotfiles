@@ -6,12 +6,8 @@ name = "Preston TW"
 default-command = "log"
 diff-formatter = ["difft", "--color=always", "$left", "$right"]
 
-[aliases]
-tug = ["bookmark", "move", "--from", "closest_bookmark(@)", "--to", "closest_pushable(@)"]
-
 [revset-aliases]
-'closest_bookmark(to)' = 'heads(ancestors(to) & bookmarks())'
-'closest_pushable(to)' = 'heads(ancestors(to) & mutable() & ~description(exact:"") & (~empty() | merges()))'
+'closest_pushable(to)' = 'heads(ancestors(to) & mutable() & ~description(exact:"") & (~empty() | merges()))' # keeping for `revsets.bookmark-advance-to`
 
 [template-aliases]
 'format_short_signature(signature)' = '''
