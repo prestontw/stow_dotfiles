@@ -8,12 +8,11 @@ images:
 mountType: "virtiofs"
 vmType: "krunkit"
 
-# Share exported git repos, but read-only. To pull changes back to the host,
-# add the vm as a remote over ssh and fetch changes from it.
+# krunkit cannot enforce `writable: false`: the guest can remount virtiofs
+# shares writable. So repos are not mounted; push them in over ssh
+# (`jj git push --remote lima`) and fetch changes back out
+# (`jj git fetch --remote lima`).
 mounts:
-- location: "~/git/export"
-  mountPoint: "/home/{{.User}}.guest/git/export"
-  writable: false
 # only bring starship config in for now
 - location: "~/.dotfiles/starship"
   mountPoint: "/home/{{.User}}.guest/.dotfiles/starship"

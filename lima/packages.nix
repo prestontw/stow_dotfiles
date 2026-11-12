@@ -15,9 +15,15 @@
     nodejs_24
     ripgrep
     stow
+    # `vulkaninfo --summary` should list a Venus device on krunkit.
+    vulkan-tools
     watchexec
     zellij
   ];
+
+  # Mesa, including the Venus Vulkan driver krunkit uses to reach the host GPU
+  # and Zink for OpenGL on top of it.
+  hardware.graphics.enable = true;
 
   # Upstream binaries installed by mise use the conventional Linux loader.
   programs.nix-ld.enable = true;

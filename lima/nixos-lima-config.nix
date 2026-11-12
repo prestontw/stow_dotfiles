@@ -19,8 +19,10 @@ let
 
     # Reserve a stable range for rootless containers in this single-user VM.
     # usermod does not duplicate ranges that are already present.
+    # render and video grant access to the virtio GPU under /dev/dri.
     ${pkgs.shadow}/bin/usermod \
       --shell /run/current-system/sw/bin/fish \
+      --append --groups render,video \
       --add-subuids 100000-165535 \
       --add-subgids 100000-165535 \
       "$lima_user"

@@ -15,9 +15,32 @@ With `brew`, this would be
 
 ```sh
 brew install lima just
+brew tap slp/krun
+brew install krunkit
 ```
 
-Additionally, enable the VM to see specific directories by replacing `mounts` in `nixos.yaml` with paths on the host and VM.
+The VM uses Lima's [krunkit](https://lima-vm.io/docs/config/vmtype/krunkit/) VM type so the guest can use the host GPU through Mesa's Venus Vulkan driver (for faster Playwright tests).
+After `just apply`, check that the GPU is visible from inside the VM:
+
+```sh
+ls /dev/dri               # expect renderD128
+vulkaninfo --summary      # expect a "Virtio-GPU Venus" device, not only llvmpipe
+```
+
+If only `llvmpipe` shows up, NixOS's stock Mesa may be missing the libkrun patches that Lima's Fedora instructions install from the `slp/mesa-libkrun-vulkan` COPR.
+
+Headless Chromium does not use the GPU by default; pass flags such as `--use-angle=vulkan --enable-features=Vulkan,VulkanFromANGLE,DefaultANGLEVulkan --ignore-gpu-blocklist` and check `chrome://gpu`.
+
+Under krunkit, `writable: false` on a virtiofs mount is not enforced (the guest can remount it writable), so git repos are not mounted.
+Push them into the VM over ssh and fetch changes back out:
+
+```sh
+limactl shell nix-dev -- jj git init ~/git/<repo>   # once, to create the guest repo
+jj git push --remote lima --bookmark main           # host changes into the VM
+jj git fetch --remote lima                          # VM changes back to the host
+```
+
+You can still enable the VM to see specific directories by replacing `mounts` in `nixos.yaml` with paths on the host and VM, keeping in mind that the guest can write to them.
 Example:
 
 ```yaml
