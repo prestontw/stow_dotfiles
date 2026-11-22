@@ -3,5 +3,6 @@
 "npm:@openai/codex" = "latest"
 "npm:@earendil-works/pi-coding-agent" = "latest"
 "aqua:anthropics/claude-code" = "latest"
+"aqua:google-antigravity/antigravity-cli" = "latest"
 "aqua:jj-vcs/jj" = "latest"
 "aqua:starship/starship" = "latest"
