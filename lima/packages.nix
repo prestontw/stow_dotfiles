@@ -8,6 +8,7 @@
     ghostty.terminfo
     git
     helix
+    jq
     just
     mise
     nil
